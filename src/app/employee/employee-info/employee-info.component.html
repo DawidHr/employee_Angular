@@ -1,0 +1,85 @@
+<div *ngIf="selectedEmployee != null">
+    <h1 style="text-align: center;">Dane Pracownika</h1>
+    <div style="width: 49%; display: inline-block; margin: 0 0;">
+      <h2>Ogólne</h2>
+      <table>
+        <tr>
+          <td>Imię: </td>
+          <td> {{ selectedEmployee.name }} </td>
+        </tr>
+        <tr>
+          <td>Nazwisko: </td>
+          <td> {{ selectedEmployee.name2 }} </td>
+        </tr>
+        <tr>
+          <td>Wiek: </td>
+          <td> {{ selectedEmployee.age }} </td>
+        </tr>
+        <tr>
+          <td>Pesel: </td>
+          <td> {{ selectedEmployee.pesel }} </td>
+        </tr>
+      </table>
+    </div>
+    
+    <div style="width: 49%; display: inline-block; margin: 0 0;">
+      <h2>Adres: </h2>
+      <table>
+        <tr>
+          <td>Ulica: </td>
+          <td> {{ selectedEmployee.street }} </td>
+        </tr>
+        <tr>
+          <td>Miasto: </td>
+          <td> {{ selectedEmployee.city }} </td>
+        </tr>
+      </table>
+    </div>
+    
+    <div>
+      <h2>Dane pracownika</h2>
+      <div style="width: 49%; display: inline-block; margin: 0 0">
+          <table>
+              <tr>
+                <td>Dział: </td>
+                <td> Dzial </td>
+              </tr>
+              <tr>
+                <td>Zarobki: </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Ilość dni wolnych: </td>
+                <td> {{ selectedEmployee.free_days }} </td>
+              </tr>
+            </table>
+      </div>
+      <div style="width: 49%; display: inline-block; margin: 0 0">
+          <table>
+              <tr>
+                <td>Data zatrudnienia</td>
+                <td> {{ selectedEmployee.data_start }} </td>
+              </tr>
+              <tr>
+                <td>Premia: </td>
+                <td> {{ selectedEmployee.money }} </td>
+              </tr>
+            </table>
+      </div>
+      
+    
+      <a href="#">Lista Obecności</a>
+    </div>
+    
+    <div style="margin-top: 50px;">
+        <h2>Notatka</h2>
+      {{ selectedEmployee.description }}
+    </div>
+    <div>
+      <a href="#">Edytuj</a>
+      <a href="#">Kasuj</a>
+    </div>
+
+
+</div>
+   

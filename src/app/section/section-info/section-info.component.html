@@ -1,0 +1,31 @@
+<div *ngIf="selectedSection == null; else employeeListDiv">
+  <h1>Nie wybrano Działu</h1>
+</div>
+<ng-template #employeeListDiv> 
+
+    <div>
+        <h1>Dział</h1>
+      
+        <table>
+          <tr>
+            <td>Id:</td>
+            <td>Imię:</td>
+            <td>Nazwisko:</td>
+            <td>Wiek:</td>
+            <td>Stanowisko:</td>
+            <td>Sekcja</td>
+          </tr>
+          <tr *ngFor="let employee of employeeInSection | filter:selectedSection">
+              <td>{{employee.id}}</td>
+              <td>{{employee.name}}</td>
+              <td>{{employee.name2}}</td>
+              <td>{{employee.age}}</td>
+              <td>{{employee.description}}</td>
+        <td><p *ngIf="employee.section != null">{{employee.section.name}} </p></td>
+            </tr>
+        </table>
+      
+      </div>
+      
+
+</ng-template>

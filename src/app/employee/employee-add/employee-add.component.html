@@ -1,0 +1,82 @@
+<div style="margin:0 200px;">
+	<h1 style="text-align: center;">DODAWANIE PRACOWNIKA</h1>
+ <form (submit)="sumbitForm(form1)" #form1="ngForm">
+	<div style="width: 49%; display: inline-block;">
+	<h2>Dane ogólne</h2>
+		<table>
+			<tr>
+				<td>Imię:</td>
+				<td><input type="text" ngModel name="firstname"></td>
+			</tr>
+			<tr>
+				<td>Nazwisko:</td>
+				<td><input type="text" ngModel name="lastname"></td>
+			</tr>
+			<tr>
+				<td>Data urodzenia:</td>
+				<td><input type="date" ngModel name="birth"></td>
+			</tr>
+			<tr>
+				<td>Pesel:</td>
+				<td><input type="number" ngModel name="pesel"></td>
+			</tr>
+		</table>
+	</div>
+	<div style="width: 49%; display: inline-block;">
+		<h2>Adres</h2>
+		<table>
+			<tr>
+				<td>Ulica</td>
+				<td><input type="text" ngModel name="street"></td>
+			</tr>
+			<tr>
+				<td>Miasto</td>
+				<td><input type="text" ngModel name="city"></td>
+			</tr>
+		</table>
+	</div>
+<div style="margin-top: 50px;">
+		<h2>Dane pracownika</h2>
+		<br />
+	<div style="width: 49%; display: inline-block;">
+		
+		<table>
+			<tr>
+				<td >Sekcja</td>
+				<td>
+					 <select ngModel name="section" >
+						<option *ngFor="let section of sectionsList" value="section.name">{{section.name}}</option>
+					</select> 
+				</td>
+			</tr>
+			<tr>
+				<td>Zarobek</td>
+				<td><input type="number" ngModel name="price"></td>
+			</tr>
+			<tr>
+				<td>Liczba dni wolnych</td>
+				<td><input type="number" ngModel name="free_day"></td>
+			</tr>
+		</table>
+	</div>
+	<div style="width: 49%; display: inline-block;">
+		<table>
+			<tr>
+				<td>Data zatrudnienia</td>
+				<td><input type="date" ngModel name="data_start"></td>
+			</tr>
+			<tr>
+				<td>Bonus</td>
+				<td><input type="number" ngModel name="bonus_price"></td>
+			</tr>
+		</table>
+	</div>
+</div>
+	<div style="margin: 50px 0;">
+		<h2>Notatka</h2>
+		<textarea ngModel name="note" style="width: 80%; height: 200px;"></textarea> 
+	</div>
+	<input type="submit" value="ZAPISZ" style="width: 80%; height: 50px;">
+	
+</form> 
+</div>

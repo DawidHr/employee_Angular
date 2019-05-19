@@ -1,0 +1,30 @@
+<div class="row">
+  <div class="col-lg-6">
+    <div>
+      <input [(ngModel)]="addSection"/>
+      <button (click)="addNewSection()">Dodaj dział</button>
+    </div>
+    <div>
+      <h1>Lista działów w Firmie:</h1>
+    <br>
+    <table>
+      <tr>
+        <td>Nazwa działu: </td>
+        <td>Ilość pracowników w dziale: </td>
+      </tr>
+      <tr *ngFor="let section of sectionList; let i=index" (click)="selectSection(i)">
+        <td>{{ section.name }}</td>
+        <td> 10 </td>
+      </tr>
+    </table>
+    </div>
+    <br>
+    
+
+  </div>
+  <div class="col-lg-6">
+    <app-section-info [(selectedSection)]="sectionInfo"></app-section-info>
+  </div>
+</div>
+
+

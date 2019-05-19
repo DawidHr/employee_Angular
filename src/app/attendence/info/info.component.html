@@ -1,0 +1,58 @@
+<div *ngIf="selectedEmployee != null" > 
+<h2>Dane ogólne</h2>
+<table style="margin-bottom: 50px; margin-top: 40px;">
+  <tr>
+    <td style="width: 75px;"><strong>Imię:  </strong></td>
+    <td style="width: 75px;"> {{ selectedEmployee.name }}</td>
+    <td style="width: 75px;"><strong>Nazwisko:  </strong></td>
+    <td style="width: 75px;"> {{ selectedEmployee.name2 }} </td>
+  </tr>
+  <tr>
+    <td><strong>Wiek:</strong></td>
+    <td> {{ selectedEmployee.age }} </td>
+    <td><strong>Pesel:</strong></td>
+    <td> {{ selectedEmployee.pesel }} </td>
+  </tr>
+</table>
+
+
+<div style="margin-bottom: 30px;">
+  <label style="margin-right: 10px;">Status</label>
+  <select style="margin-right: 10px;" [(ngModel)] = "status">
+    <option value="obecny">Obecny</option>
+    <option value="spoźniony">Spóźniony</option>
+    <option value="nieobecny">Nieobecny</option>
+    <option value="l4">L4</option>
+    <option value="wolne">Wolne</option>
+  </select>
+
+<label style="margin-right: 10px;">Od</label>
+<input type="date" style="margin-right: 10px;" [(ngModel)] = "date_start"/>
+<label style="margin-right: 10px;">Do</label>
+<input type="date" style="margin-right: 10px;" [(ngModel)] = "date_end"/>
+<button (click)="changeStatus()">Zapisz</button>
+</div>
+
+
+<div style="width: 350px;">
+  <div style="width: 75px; display: inline-block;">Poprzedni</div>
+  <div style="width: 200px; display: inline-block;">ROK {{ currentYear }}</div>
+  <div style="width: 75px; display: inline-block;">Następny</div>
+
+  <div style="width: 75px; display: inline-block;">Poprzedni</div>
+  <div style="width: 200px; display: inline-block;">Miesiąc {{ currentMonth }}</div>
+  <div style="width: 75px; display: inline-block;">Następny</div>
+
+  <div style="width: 50px; display: inline-block;">Pn.</div>
+  <div style="width: 50px; display: inline-block;">Wt.</div>
+  <div style="width: 50px; display: inline-block;">Śr.</div>
+  <div style="width: 50px; display: inline-block;">Czw.</div>
+  <div style="width: 50px; display: inline-block;">Pt.</div>
+  <div style="width: 50px; display: inline-block;">Sob.</div>
+  <div style="width: 50px; display: inline-block;">Niedz.</div>
+
+  <div style="width: 50px; display: inline-block;" *ngFor="let x of calendar" [ngStyle]="{background: getColor(x.status) }"> {{ x.day }}</div>
+ 
+</div>
+
+</div>

@@ -1,0 +1,28 @@
+<h1>Lista obecności</h1>
+<span>Dział: </span>
+<select>
+  <option value="wszyscy" (click) = "changeSectionFilter('wszyscy')">Wszyscy</option>
+  <option *ngFor="let section of sections" value="{{ section.name}}" (click) = "changeSectionFilter(section.name)"> {{ section.name }}</option>
+</select> 
+<br><br><br><br><br>
+<table>
+  <tr>
+    <td>Id:</td>
+    <td>Imię:</td>
+    <td>Nazwisko:</td>
+    <td>Wiek:</td>
+    <td>Stanowisko:</td>
+    <td>Sekcja</td>
+  </tr>
+  <tr *ngFor="let employee of emploayeeList" (click)="selectEmployee(employee.pesel)">
+      <td>{{employee.id}}</td>
+      <td>{{employee.name}}</td>
+      <td>{{employee.name2}}</td>
+      <td>{{employee.age}}</td>
+      <td>{{employee.description}}</td>
+<td><p *ngIf="employee.section != null">{{employee.section.name}} </p></td>
+    </tr>
+</table>
+<br>
+<br>
+<button routerLink="add_employee">Dodaj pracownika</button>
